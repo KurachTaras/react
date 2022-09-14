@@ -1,0 +1,29 @@
+.SomeCharacters {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.char_card {
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.charac_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
