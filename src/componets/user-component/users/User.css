@@ -1,0 +1,57 @@
+.users {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.additional_info {
+    width: 90%;
+}
+
+.user_card {
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.user_card:hover {
+    border: 2px solid crimson;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+.addInfo {
+    background-color: cornflowerblue;
+    color: white;
+    min-height: 30px;
+    min-width: 120px;
+    border: none;
+}
+
+.addInfo:hover {
+    border-radius: 10px;
+    background-color: deepskyblue;
+    border: 2px solid darkslateblue;
+}
+
+.addInfo:active {
+    background-color: crimson;
+}

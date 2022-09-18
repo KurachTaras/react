@@ -1,0 +1,29 @@
+.Launches {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.launch_card {
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.launch_card:hover {
+    border: 3px solid crimson;
+}
+
+.photo {
+    width: 50%;
+}
+
+.img {
+    width: 80%;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
