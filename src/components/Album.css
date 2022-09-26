@@ -1,0 +1,21 @@
+.albums {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album_card {
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.album_card:hover {
+    border: 2px solid darkslateblue;
+    transition: 0.3s;
+}

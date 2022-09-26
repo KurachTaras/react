@@ -1,0 +1,59 @@
+.comments {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.comment_card {
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.comment_card:hover {
+    border: 2px solid darkslateblue;
+    transition: 0.3s;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.comment_btn {
+    background-color: cornflowerblue;
+    color: white;
+    min-width: 120px;
+    min-height: 30px;
+    border: none;
+}
+
+.comment_btn:hover {
+    border-radius: 10px;
+    background-color: deepskyblue;
+    border: 2px solid darkslateblue;
+    transition: 0.5s;
+}
+
+.postOfComment {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid cornflowerblue;
+    height: 60px;
+}
+
+.post_id {
+    color: crimson;
+    font-size: 25px;
+}
