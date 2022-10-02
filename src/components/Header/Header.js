@@ -1,48 +1,111 @@
-import {useReducer} from "react";
+import {useReducer, useRef} from "react";
 
-import {useState} from "react";
-
-const initialValue = (initialValue) => {
-    return {addCat: [], addDog: []}
+const init = (initialValue) => {
+    return {dog: initialValue, cat: initialValue}
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'addCat':
-            return {...state, addCat: action.payload};
-        case 'addDog':
-            return {...state, addDog: action.payload};
+        case 'addCat': {
+            const newCat = {
+                id: state.cat?.length,
+                name: action.name,
+            };
+            return {
+                cat: [...state.cat, newCat],
+            };
+        }
+        case 'removeCat': {
+            const idx = state.cat.findIndex(c => c.id === action.id);
+            const cat = Object.assign([], state.cat);
+            cat.splice(idx, 1);
+            return {
+                cat: cat,
+            };
+        }
+        case 'addDog': {
+            const newDog = {
+                id: state.dog?.length,
+                name: action.name,
+            };
+            return {
+                dog: [...state.dog, newDog],
+            };
+        }
+        case 'removeDog': {
+            const idx = state.dog.findIndex(d => d.id === action.id);
+            const dog = Object.assign([], state.dog);
+            dog.splice(idx, 1);
+            return {
+                dog: dog,
+            };
+        }
+        default:
+            return state
+
     }
-    return {...state}
-}
+};
+
 
 const Header = () => {
-    const [state, dispatch] = useReducer(reducer,  initialValue);
-    const [cat, setCat] = useState([]);
-    const [dog, setDog] = useState([]);
+    const [state, dispatch] = useReducer(reducer, [] ,init);
+    const cat = useRef();
+    const dog = useRef();
 
-    const changeCat = event => {
-        setCat(event.target.value)
-}
+    const handleSubmitCat = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'addCat',
+            name: cat.current.value
+        });
+        cat.current.value = '';
+        console.log(state);
+    };
 
-    const changeDog = event => {
-        setDog(event.target.value)
-}
-
+    const handleSubmitDog = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'addDog',
+            name: dog.current.value
+        });
+        dog.current.value = '';
+        console.log(state);
+    };
 
     return (
         <div>
-            <input type="text" value={cat} onChange={changeCat} />
-            <button onClick={() => dispatch({type: 'addCat', payload:cat})}>Save</button>
-            <input type="text" value={dog} onChange={changeDog} />
-            <button onClick={() => dispatch({type: 'addDog', payload:dog})}>Save</button>
-
-            <h2>cat: {state.addCat}</h2>
-            <h2>dog: {state.addDog}</h2>
-
-            <div>
-                 {/*Somehow use map????*/}
-            </div>
+            <form onSubmit={handleSubmitCat}>
+                <input  ref={cat}/>
+                <button>
+                    save
+                </button>
+            </form>
+            <form onSubmit={handleSubmitDog}>
+                <input  ref={dog}/>
+                <button>
+                    save
+                </button>
+            </form>
+            <ul>
+                {state.cat?.map((item, index) => (
+                    <li key={item.id}>
+                        {item.name}
+                        <button onClick={() => dispatch({type:'removeCat', index})}>
+                            Remove
+                        </button>
+                    </li>
+                ))}
+            </ul>
+            <ul>
+                {state.dog?.map((item, index) => (
+                    <li key={item.id}>
+                        {item.name}
+                        <button onClick={() => dispatch({type:'removeDog', index})}>
+                            Remove
+                        </button>
+                    </li>
+                ))}
+            </ul>
 
         </div>
     );
