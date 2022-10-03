@@ -1,0 +1,55 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cats, .dogs {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat_card, .dog_card {
+    min-height: 60px;
+    min-width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.cat_name, .dog_name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cat_button, .dog_button {
+    min-width: 60px;
+    min-height: 30px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.cat_button:hover, .dog_button:hover{
+    cursor: pointer;
+    background-color: darkslateblue;
+    transition: 0.5s;
+}
+

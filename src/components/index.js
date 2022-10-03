@@ -1,2 +1,3 @@
 export * from './Header/Header';
-export * from './Cat/Cat'
+export * from './Pats/Pats'
+export * from './PatsForm/PatsForm'
